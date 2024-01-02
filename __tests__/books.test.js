@@ -47,7 +47,7 @@ describe("GET /books/:isbn", function() {
 });
 
 describe("POST /books", function() {
-    test("creates new book", aync function() {
+    test("creates new book", async function() {
         const response = await request(app)
             .post(`/books`)
             .send({
@@ -63,8 +63,8 @@ describe("POST /books", function() {
     expect(response.statusCode).toBe(201);
     expect(response.body.book).toHaveProperty("isbn");
   });
-    })
 })
+
 
 describe("PUT /books/id", function () {
     test("Updates a single book", async function () {
